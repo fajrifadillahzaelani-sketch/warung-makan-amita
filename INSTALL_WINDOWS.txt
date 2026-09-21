@@ -1,0 +1,21 @@
+CARA INSTALL WARUNG MAKAN AMITA
+
+1. Extract ZIP ini.
+2. Buka folder hasil extract di VS Code.
+3. Pastikan file package.json dan server.js terlihat di folder utama.
+4. Buka Terminal VS Code.
+5. Jalankan:
+
+npm install
+
+6. Setelah selesai:
+
+npm start
+
+7. Buka browser:
+http://localhost:3000
+
+Halaman admin:
+http://localhost:3000/admin.html
+
+Jika npm install masih error, kirim screenshot/error merah dari Terminal agar bisa diperbaiki sesuai errornya.

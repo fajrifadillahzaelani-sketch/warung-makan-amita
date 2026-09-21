@@ -1,0 +1,5 @@
+node_modules/
+warung.db
+warung.db-shm
+warung.db-wal
+.env

@@ -1,0 +1,14 @@
+{
+  "name": "warung-makan-amita",
+  "version": "1.0.0",
+  "description": "Website warung makan dengan SQLite dan halaman admin",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "express": "^5.1.0"
+  },
+  "private": true
+}
