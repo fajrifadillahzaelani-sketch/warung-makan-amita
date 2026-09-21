@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Admin - Warung Makan Amita</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <h1>🍽️ Warung Makan Amita</h1>
+    <a class="btn" href="/">Website</a>
+  </div>
+</header>
+
+<main class="container" style="max-width:520px; padding-top:60px;">
+  <div class="order" style="padding:28px;">
+    <h2>🔐 Login Admin</h2>
+    <p>Masuk untuk melihat dan mengelola pesanan pelanggan.</p>
+
+    <form id="loginForm">
+      <label>Username</label>
+      <input id="username" type="text" autocomplete="username" required style="width:100%; box-sizing:border-box; padding:12px; margin:8px 0 16px;">
+
+      <label>Password</label>
+      <input id="password" type="password" autocomplete="current-password" required style="width:100%; box-sizing:border-box; padding:12px; margin:8px 0 16px;">
+
+      <button class="btn" type="submit">Masuk</button>
+      <p id="error" style="color:#c62828; margin-top:15px;"></p>
+    </form>
+
+    <small>Login default demo: <b>admin</b> / <b>amita123</b></small>
+  </div>
+</main>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const error = document.getElementById("error");
+  error.textContent = "";
+
+  const response = await fetch("/api/admin/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value
+    })
+  });
+
+  const data = await response.json();
+  if (!response.ok) {
+    error.textContent = data.error || "Login gagal.";
+    return;
+  }
+
+  window.location.href = "/admin.html";
+});
+</script>
+</body>
+</html>

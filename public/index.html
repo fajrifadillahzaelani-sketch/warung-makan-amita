@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warung Makan Amita</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warung Makan Amita — Masakan Sunda</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/"><img src="/assets/logo-amita.jpg" alt="Logo Warung Makan Amita"><span>Warung Makan<br><b>Amita</b></span></a>
+    <nav><a class="active" href="#beranda">⌂ Beranda</a><a href="#menu">🍴 Menu</a><a href="#cek" id="navTrack">▣ Cek Pesanan</a><a href="#tentang">● Tentang Kami</a></nav>
+    <div class="nav-actions"><a class="admin-link" href="/admin.html">🔒 Login Admin</a><a class="account-link" href="#menu">👤 Login / Daftar</a><button id="cartBtn" class="cart-btn">🛒 <span>Keranjang</span> <b id="cartCount">0</b></button></div>
+  </div>
+</header>
 
-    <h1>Warung Makan Amita</h1>
-    <p>Website sedang dalam proses pembuatan.</p>
+<section id="beranda" class="hero">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="hero-brand"><img src="/assets/logo-amita.jpg" alt="Warung Makan Amita"></div>
+    <div class="hero-copy"><p class="eyebrow">WARUNG MAKAN AMITA • MASAKAN SUNDA</p><h1>Rasa Tradisional,<br><em>Kelezatan yang Tak Pernah Hilang</em></h1><p class="hero-sub">Makanan enak • Harga bersahabat • Suasana nyaman</p><a href="#menu" class="hero-btn">Lihat Menu <span>→</span></a></div>
+    <div class="hero-badge">Nikmati<br><b>Kelezatan<br>Masakan Sunda</b><br>di Sini!</div>
+  </div>
+</section>
 
-</body>
-</html>
+<main class="container main-content" id="menu">
+  <div class="search-area"><div class="search-box"><span>⌕</span><input id="searchMenu" placeholder="Cari menu..." autocomplete="off"></div><button class="pill active" data-kind="all">▦ Semua Menu</button><button class="pill" data-kind="food">🍴 Makanan</button><button class="pill" data-kind="drink">☕ Minuman</button><button class="pill" data-kind="category">▦ Kategori</button><select id="categoryFilter" class="category-select"><option value="">Semua kategori</option></select></div>
+
+  <section class="category-section"><div class="section-head"><h2>Kategori Menu</h2><span id="categoryCountLabel">195 pilihan</span></div><div id="categoryCards" class="category-grid"></div></section>
+
+  <section class="menu-section"><div class="section-head"><h2>🍴 Menu Populer</h2><a href="#menu" id="showAll">Lihat Semua Menu →</a></div><div id="menuList" class="menu-grid"></div><div id="toast" class="toast"></div></section>
+</main>
+
+<section class="about" id="tentang"><div class="container about-inner"><img src="/assets/logo-amita.jpg" alt="Logo Amita"><div><p class="eyebrow">TENTANG KAMI</p><h2>Masakan Sunda dengan rasa rumahan.</h2><p>Warung Makan Amita menghadirkan pilihan masakan harian, paket nasi, ayam dan ikan, sambal, pepes, gorengan, mie, nasi goreng, sampai minuman untuk menemani makan sehari-hari.</p></div></div></section>
+
+<div id="cartModal" class="modal"><div class="modal-content"><button id="closeCart" class="close">×</button><h2>🛒 Keranjang Pesanan</h2><div id="cartItems"></div><div class="total">Total: <span id="cartTotal">Rp0</span></div><div class="form"><input id="nama" placeholder="Nama pelanggan"><input id="hp" placeholder="Nomor HP"><textarea id="alamat" placeholder="Alamat pengantaran"></textarea></div><button id="orderBtn" class="order-btn">Pesan Sekarang</button></div></div>
+<div id="trackModal" class="modal"><div class="modal-content"><button id="closeTrack" class="close">×</button><h2>📦 Cek Status Pesanan</h2><p>Masukkan nomor pesanan dan nomor HP yang digunakan saat memesan.</p><div class="form"><input id="trackId" type="number" placeholder="Nomor pesanan"><input id="trackHp" placeholder="Nomor HP"></div><button id="checkOrderBtn" class="order-btn">Cek Status</button><div id="trackResult" class="track-result"></div></div></div>
+<footer><div class="container footer-inner"><span>© 2026 Warung Makan Amita</span><a href="/admin.html">Halaman Admin</a></div></footer>
+<script src="script.js"></script>
+</body></html>
